@@ -1,3 +1,5 @@
+
+
 public class Server {
     public boolean serveGuest(Guest guest){
         //bouncer pattern
@@ -6,6 +8,9 @@ public class Server {
         }
         if (guest.getWallet() < 5) {
             return false;
+        }
+        if (guest.getSobriety() == Sobriety.DRUNK) {
+        return false;
         }
         return true;
 

@@ -13,7 +13,7 @@ public class ServerTest {
     public void setUp(){
         server = new Server();
         guest1 = new Guest("Will", 19, 10, AccessLevel.GREENLIST, Sobriety.DRUNK, "£");
-        guest2 = new Guest("Alice", 19, 4, AccessLevel.GREENLIST, Sobriety.SOBER, "£");
+        guest2 = new Guest("Alice", 19, 10, AccessLevel.GREENLIST, Sobriety.SOBER, "£");
     }
 
     // Test that guest can only get served if over 18
@@ -36,7 +36,7 @@ public class ServerTest {
         assertThat(server.serveGuest(guest2)).isEqualTo(false);
     }
 
-    // TODO: test that guest can only get served if sober enough (set sobriety level on guest)
+    // Test that guest can only get served if sober enough (set sobriety level on guest)
     @Test
     public void canServeSober(){
         assertThat(server.serveGuest(guest2)).isEqualTo(true);

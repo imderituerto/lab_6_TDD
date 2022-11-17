@@ -24,5 +24,8 @@ public class Guest {
     public int getWallet(){
         return this.wallet;
     }
+    public Sobriety getSobriety(){
+        return this.sobriety;
+    }
 
 }
