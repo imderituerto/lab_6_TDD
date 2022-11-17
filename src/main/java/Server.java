@@ -7,7 +7,6 @@ public class Server {
         if (guest.getWallet() < 5) {
             return false;
         }
-
         return true;
 
         /* if

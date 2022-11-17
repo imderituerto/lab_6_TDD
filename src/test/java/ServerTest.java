@@ -27,7 +27,6 @@ public class ServerTest {
     }
 
     // Test that guest can only get served if has enough money to buy a drink (every drink is £5)
-//    @Test
     @Test
     public void canServeTenPounds(){
         assertThat(server.serveGuest(guest1)).isEqualTo(true);
@@ -37,8 +36,15 @@ public class ServerTest {
         assertThat(server.serveGuest(guest2)).isEqualTo(false);
     }
 
-
     // TODO: test that guest can only get served if sober enough (set sobriety level on guest)
+    @Test
+    public void canServeSober(){
+        assertThat(server.serveGuest(guest2)).isEqualTo(true);
+    }
+    @Test
+    public void canServeNotSober(){
+        assertThat(server.serveGuest(guest1)).isEqualTo(false);
+    }
 
     // TODO: test that guest can only get served if guest is not banned from the pub
 
