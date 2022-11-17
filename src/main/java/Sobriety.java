@@ -1,3 +1,3 @@
 public enum Sobriety {
-    SOBER, DRUNK, WASTED
+    SOBER, TIPSY, DRUNK
 }
