@@ -1,6 +1,10 @@
 public class Server {
     public boolean serveGuest(Guest guest){
+        //bouncer pattern
         if (guest.getAge() < 18) {
+            return false;
+        }
+        if (guest.getWallet() < 5) {
             return false;
         }
 

@@ -26,11 +26,11 @@ public class ServerTest {
         assertThat(server.serveGuest(guest2)).isEqualTo(false);
     }
 
-    // TODO: test that guest can only get served if has enough money to buy a drink (every drink is £5)
+    // Test that guest can only get served if has enough money to buy a drink (every drink is £5)
 //    @Test
     @Test
     public void canServeTenPounds(){
-        assertThat(server.serveGuest(guest1)).isEqualTo(false);
+        assertThat(server.serveGuest(guest1)).isEqualTo(true);
     }
     @Test
     public void canServeFourPounds(){

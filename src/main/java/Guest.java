@@ -21,5 +21,8 @@ public class Guest {
     public int getAge(){
         return this.age;
     }
+    public int getWallet(){
+        return this.wallet;
+    }
 
 }
