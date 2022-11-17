@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
 public class ServerTest {
 
     Server server;
@@ -17,33 +16,18 @@ public class ServerTest {
         guest2 = new Guest("Alice", 17, 50, AccessLevel.GREENLIST, Sobriety.SOBER, "£");
     }
 
-    // TODO: test that guest can only get served if over 18
+    // Test that guest can only get served if over 18
     @Test
-    public void guestIsOver18(){
-        //act
-        /* if Guest age is =>18, serve (true)
-            else, don't serve (false)
-         */
-        //assert
-        assertThat(guest1.getAge()).isEqualto(>=18) // return true
+    public void canServeGuestOver18(){
+        assertThat(server.serveGuest(guest1)).isEqualTo(true);
     }
 
     @Test
-    public void guestIsUnder18(){
-        //arrange
-        Guest guest = new Guest("Adam", 17);
-        //act
-        /* if Guest age is =>18, serve (true)
-            else, don't serve (false)
-         */
-
-        //assert
-        assertThat(guest2.getAge()).isEqualto(>=18) // return false
+    public void canServeGuestUnder18(){
+        assertThat(server.serveGuest(guest2)).isEqualTo(false);
     }
 
     // TODO: test that guest can only get served if has enough money to buy a drink (every drink is £5)
-    @Test
-    public void
 
     // TODO: test that guest can only get served if sober enough (set sobriety level on guest)
 
