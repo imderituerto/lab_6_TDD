@@ -13,7 +13,7 @@ public class ServerTest {
     public void setUp(){
         server = new Server();
         guest1 = new Guest("Will", 19, 10, AccessLevel.BLACKLIST, Sobriety.SOBER, "£");
-        guest2 = new Guest("Alice", 17, 4, AccessLevel.GREENLIST, Sobriety.DRUNK, "£");
+        guest2 = new Guest("Alice", 19, 10, AccessLevel.GREENLIST, Sobriety.SOBER, "£");
     }
 
     // Test that guest can only get served if over 18
@@ -46,15 +46,16 @@ public class ServerTest {
         assertThat(server.serveGuest(guest1)).isEqualTo(false);
     }
 
-    // TODO: test that guest can only get served if guest is not banned from the pub
+    // Test that guest can only get served if guest is not banned from the pub
     @Test
     public void canServeBanned(){
-        assertThat(server.serveGuest(guest1)).isEqualTo(true);
+        assertThat(server.serveGuest(guest1)).isEqualTo(false);
     }
     @Test
     public void canServeNotBanned(){
         assertThat(server.serveGuest(guest2)).isEqualTo(true);
     }
+
     // TODO: test that guest can only get served if guest can pay in local currency (add £ char as currency)
 
     // EXTENSIONS

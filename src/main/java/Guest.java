@@ -27,5 +27,8 @@ public class Guest {
     public Sobriety getSobriety(){
         return this.sobriety;
     }
+    public AccessLevel getAccessLevel(){
+        return this.accessLevel;
+    }
 
 }

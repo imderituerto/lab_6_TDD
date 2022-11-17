@@ -12,17 +12,20 @@ public class Server {
         if (guest.getSobriety() == Sobriety.DRUNK) {
         return false;
         }
+        if (guest.getAccessLevel() != AccessLevel.GREENLIST) {
+            return false;
+        }
         return true;
 
         /* if
-                age is >= 18
-                wallet is >= 10
-                access is != BLACKLIST
-                sobriety != DRUNK
-                currency = £
-                serve (return true)
-         else
+                not >18
+                wallet not >5
+                access not GREENLIST
+                sobriety not SOBER/TIPSY
+                currency not £
                 don't serve (return false)
+         else
+                serve (return true)
 
          */
 
